@@ -1,0 +1,166 @@
+/* ======================================
+   RECIBO - IMPRESSÃO MEIA FOLHA A4
+====================================== */
+
+
+/* Configuração da página */
+
+@page {
+
+    size: A4 portrait;
+    margin: 0;
+
+}
+
+
+/* Corpo */
+
+body {
+
+    margin:0;
+    padding:0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color:#000;
+
+    background:#fff;
+
+}
+
+
+
+/* Área do recibo */
+
+.recibo {
+
+    width:210mm;
+    height:148mm;
+
+    padding:20mm 18mm;
+
+    box-sizing:border-box;
+
+    border-bottom:1px dashed #999;
+
+}
+
+
+
+/* Título */
+
+.recibo h2 {
+
+    text-align:center;
+
+    font-size:18px;
+
+    margin-bottom:25px;
+
+    letter-spacing:1px;
+
+}
+
+
+
+/* Valor */
+
+.valor {
+
+    font-size:16px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+/* Texto principal */
+
+.texto {
+
+    font-size:15px;
+
+    line-height:1.8;
+
+    text-align:justify;
+
+}
+
+
+
+/* Data */
+
+.data {
+
+    margin-top:30px;
+
+    font-size:15px;
+
+    text-align:right;
+
+}
+
+
+
+/* Assinatura */
+
+.assinatura {
+
+    margin-top:50px;
+
+    text-align:center;
+
+    font-size:15px;
+
+}
+
+
+
+/* Ajuste para tela */
+
+@media screen {
+
+
+    body {
+
+        background:#eee;
+
+    }
+
+
+    .recibo {
+
+        margin:20px auto;
+
+        background:white;
+
+        box-shadow:0 0 10px #aaa;
+
+    }
+
+
+}
+
+
+
+/* Impressão */
+
+@media print {
+
+
+    body {
+
+        background:white;
+
+    }
+
+
+    .recibo {
+
+        box-shadow:none;
+
+    }
+
+
+}
