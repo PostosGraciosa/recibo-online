@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Recibo de Pagamento</title>
+
+<link rel="stylesheet" href="css/print.css">
+
+</head>
+
+
+<body>
+
+
+<div class="recibo">
+
+
+    <h2>
+        ----------- RECIBO DE PAGAMENTO -----------
+    </h2>
+
+
+    <p class="valor">
+
+        <strong>Valor:</strong>
+
+        <span id="valor"></span>
+
+    </p>
+
+
+
+    <p class="texto">
+
+        Eu, <strong id="recebedor"></strong>,
+        declaro que recebi de
+        <strong id="pagador"></strong>,
+        a importância de
+        <strong>
+            <span id="valorTexto"></span>
+            (<span id="extenso"></span>)
+        </strong>,
+        referente a
+        <strong id="referente"></strong>.
+
+    </p>
+
+
+
+    <p class="texto">
+
+        Por ser verdade, firmo o presente recibo,
+        para que produza seus devidos e legais efeitos.
+
+    </p>
+
+
+
+    <p class="data">
+
+        <span id="cidade"></span>,
+        <span id="data"></span>.
+
+    </p>
+
+
+    <br><br>
+
+
+    <div class="assinatura">
+
+
+        ________________________________________
+
+        <br>
+
+
+        <strong id="nomeAssinatura"></strong>
+
+
+    </div>
+
+
+
+</div>
+
+
+<script src="js/imprimir.js"></script>
+
+
+</body>
+
+</html>
