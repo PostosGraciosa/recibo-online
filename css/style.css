@@ -1,0 +1,122 @@
+/* ===================================
+   SISTEMA DE RECIBOS
+=================================== */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    background:#f4f6f9;
+    font-family:Arial, Helvetica, sans-serif;
+    color:#333;
+
+}
+
+/* Card */
+
+.card{
+
+    border-radius:18px;
+    overflow:hidden;
+
+}
+
+/* Logo */
+
+#logo{
+
+    max-height:90px;
+    object-fit:contain;
+
+}
+
+/* Título */
+
+h2{
+
+    font-weight:bold;
+
+}
+
+/* Labels */
+
+.form-label{
+
+    font-weight:600;
+    margin-bottom:6px;
+
+}
+
+/* Campos */
+
+.form-control{
+
+    height:48px;
+    border-radius:10px;
+
+}
+
+textarea.form-control{
+
+    height:auto;
+    resize:none;
+
+}
+
+/* Campo somente leitura */
+
+#extenso{
+
+    background:#eef2f7;
+    font-weight:bold;
+    color:#198754;
+
+}
+
+/* Botão */
+
+.btn-success{
+
+    height:52px;
+    font-size:18px;
+    font-weight:bold;
+    border-radius:10px;
+    transition:.3s;
+
+}
+
+.btn-success:hover{
+
+    transform:translateY(-2px);
+
+}
+
+/* Card do formulário */
+
+.card-body{
+
+    padding:35px;
+
+}
+
+/* Responsivo */
+
+@media(max-width:768px){
+
+    .card-body{
+
+        padding:20px;
+
+    }
+
+    h2{
+
+        font-size:26px;
+
+    }
+
+}
