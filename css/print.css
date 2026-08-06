@@ -2,82 +2,100 @@
    RECIBO - IMPRESSÃO MEIA FOLHA A4
 ====================================== */
 
-
-/* Configuração da página */
-
+/* Página */
 @page {
-
     size: A4 portrait;
     margin: 0;
-
 }
-
 
 /* Corpo */
-
-body {
-
+body{
     margin:0;
     padding:0;
-
-    font-family: Arial, Helvetica, sans-serif;
-
+    background:#ececec;
+    font-family:Arial, Helvetica, sans-serif;
     color:#000;
-
-    background:#fff;
-
 }
 
-
-
 /* Área do recibo */
-
-.recibo {
+.recibo{
 
     width:210mm;
     height:148mm;
 
-    padding:20mm 18mm;
+    margin:20px auto;
+
+    background:#fff;
+
+    padding:12mm 15mm;
 
     box-sizing:border-box;
+
+    box-shadow:0 0 12px rgba(0,0,0,.15);
 
     border-bottom:1px dashed #999;
 
 }
 
-
-
-/* Título */
-
-.recibo h2 {
+/* Logo */
+.logo-recibo{
 
     text-align:center;
 
-    font-size:18px;
+    margin-bottom:10px;
 
-    margin-bottom:25px;
+}
+
+.logo-recibo img{
+
+    width:70px;
+
+    height:auto;
+
+    display:block;
+
+    margin:0 auto;
+
+}
+
+/* Título */
+.recibo h2{
+
+    margin:0 0 18px 0;
+
+    text-align:center;
+
+    font-size:20px;
+
+    font-weight:bold;
 
     letter-spacing:1px;
 
-}
+    padding-bottom:8px;
 
-
-
-/* Valor */
-
-.valor {
-
-    font-size:16px;
-
-    margin-bottom:20px;
+    border-bottom:2px solid #000;
 
 }
 
+/* Caixa do valor */
+.valor{
 
+    border:1px solid #000;
 
-/* Texto principal */
+    padding:10px 15px;
 
-.texto {
+    font-size:18px;
+
+    font-weight:bold;
+
+    text-align:right;
+
+    margin-bottom:25px;
+
+}
+
+/* Texto */
+.texto{
 
     font-size:15px;
 
@@ -85,29 +103,25 @@ body {
 
     text-align:justify;
 
+    margin-bottom:18px;
+
 }
 
-
-
 /* Data */
-
-.data {
-
-    margin-top:30px;
-
-    font-size:15px;
+.data{
 
     text-align:right;
 
+    margin-top:35px;
+
+    font-size:15px;
+
 }
 
-
-
 /* Assinatura */
+.assinatura{
 
-.assinatura {
-
-    margin-top:50px;
+    margin-top:55px;
 
     text-align:center;
 
@@ -115,52 +129,23 @@ body {
 
 }
 
-
-
-/* Ajuste para tela */
-
-@media screen {
-
-
-    body {
-
-        background:#eee;
-
-    }
-
-
-    .recibo {
-
-        margin:20px auto;
-
-        background:white;
-
-        box-shadow:0 0 10px #aaa;
-
-    }
-
-
-}
-
-
-
 /* Impressão */
+@media print{
 
-@media print {
+    body{
 
-
-    body {
-
-        background:white;
+        background:#fff;
 
     }
 
+    .recibo{
 
-    .recibo {
+        margin:0;
 
         box-shadow:none;
 
-    }
+        border-bottom:1px dashed #999;
 
+    }
 
 }
