@@ -5,7 +5,6 @@
 
 window.onload = () => {
 
-    alert("Página carregada!");
 
     const dados = JSON.parse(localStorage.getItem("recibo"));
 
@@ -60,7 +59,7 @@ window.onload = () => {
 
     // Aguarda a renderização e abre a impressão
     setTimeout(() => {
-        alert("Vou imprimir agora");
+        
 window.print();
     }, 500);
 
