@@ -19,6 +19,7 @@
 <div class="recibo">
 
 
+    <!-- LOGO -->
     <div class="logo-recibo">
 
         <img src="img/logo.png" alt="Logo">
@@ -26,9 +27,23 @@
     </div>
 
 
+    <!-- EMPRESA GERADORA -->
+    <div class="gerador">
+
+        <strong>POSTOS GRACIOSA LTDA</strong>
+
+        <br>
+
+        CNPJ: XX.XXX.XXX/0001-XX
+
+    </div>
+
+
+
     <h2>
-    RECIBO DE PAGAMENTO
-</h2>
+        RECIBO DE PAGAMENTO
+    </h2>
+
 
 
     <p class="valor">
@@ -43,20 +58,31 @@
 
     <p class="texto">
 
-    Eu, <strong id="recebedor"></strong>
-    (<span id="documento"></span>),
-    declaro que recebi de
-    <strong id="pagador"></strong>
-    (<span id="documentoPagador"></span>),
-    a importância de
+        Eu, 
+        <strong id="recebedor"></strong>
+        (<span id="documento"></span>),
+
+        declaro que recebi de
+
+        <strong id="pagador"></strong>
+        (<span id="documentoPagador"></span>),
+
+        a importância de
+
         <strong>
+
             <span id="valorTexto"></span>
+
             (<span id="extenso"></span>)
+
         </strong>,
+
         referente a
+
         <strong id="referente"></strong>.
 
     </p>
+
 
 
 
@@ -69,34 +95,41 @@
 
 
 
+
     <p class="data">
 
         <span id="cidade"></span>,
+
         <span id="data"></span>.
 
     </p>
 
 
-    <br><br>
 
 
-   <div class="assinatura">
+    <div class="assinatura">
 
-    ________________________________________
 
-    <br>
+        ________________________________________
 
-    <strong id="nomeAssinatura"></strong>
+        <br>
 
-    <br>
 
-    <span id="documentoAssinatura"></span>
+        <strong id="nomeAssinatura"></strong>
+
+
+        <br>
+
+
+        <span id="documentoAssinatura"></span>
+
+
+    </div>
+
+
 
 </div>
 
-
-
-</div>
 
 
 <script src="js/imprimir.js"></script>
