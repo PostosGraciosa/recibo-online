@@ -18,81 +18,20 @@ window.onload = () => {
     }
 
 
-    // Nome do recebedor
-    document.getElementById("recebedor").textContent = dados.recebedor;
 
+    // ===============================
+    // RECEBEDOR
+    // ===============================
 
-    // Nome do pagador
-    document.getElementById("pagador").textContent = dados.pagador;
-
-
-
-    // CPF ou CNPJ do pagador
-
-    const documentoPagador = (dados.documentoPagador || "").replace(/\D/g, "");
-
-
-    if(documentoPagador.length === 11){
-
-        document.getElementById("documentoPagador").textContent =
-        "CPF: " + dados.documentoPagador;
-
-    }
-    else if(documentoPagador.length === 14){
-
-        document.getElementById("documentoPagador").textContent =
-        "CNPJ: " + dados.documentoPagador;
-
-    }
-    else{
-
-        document.getElementById("documentoPagador").textContent =
-        dados.documentoPagador || "";
-
-    }
-
-
-
-
-    // Valor
-
-    document.getElementById("valor").textContent =
-    dados.valor;
-
-
-
-    // Valor por extenso
-
-    document.getElementById("extenso").textContent =
-    dados.extenso;
-
-
-
-    // Referente
-
-    document.getElementById("referente").textContent =
-    dados.referente;
-
-
-
-    // Cidade
-
-    document.getElementById("cidade").textContent =
-    dados.cidade;
-
-
-
-
-    // Nome assinatura
-
-    document.getElementById("nomeAssinatura").textContent =
+    document.getElementById("recebedor").textContent =
     dados.recebedor;
 
 
 
-    // CPF ou CNPJ do recebedor
+    // CPF ou CNPJ do recebedor no texto
 
-    const documentoRecebedor = (dados.documento || "").replace(/\D/g, "");
+    const documentoRecebedor =
+    (dados.documento || "").replace(/\D/g, "");
 
 
     if(documentoRecebedor.length === 11){
@@ -117,7 +56,98 @@ window.onload = () => {
 
 
 
-    // Data
+    // ===============================
+    // PAGADOR
+    // ===============================
+
+    document.getElementById("pagador").textContent =
+    dados.pagador;
+
+
+
+    const documentoPagador =
+    (dados.documentoPagador || "").replace(/\D/g, "");
+
+
+
+    if(documentoPagador.length === 11){
+
+        document.getElementById("documentoPagador").textContent =
+        "CPF: " + dados.documentoPagador;
+
+    }
+    else if(documentoPagador.length === 14){
+
+        document.getElementById("documentoPagador").textContent =
+        "CNPJ: " + dados.documentoPagador;
+
+    }
+    else{
+
+        document.getElementById("documentoPagador").textContent =
+        dados.documentoPagador || "";
+
+    }
+
+
+
+
+    // ===============================
+    // VALORES
+    // ===============================
+
+    document.getElementById("valor").textContent =
+    dados.valor;
+
+
+    document.getElementById("valorTexto").textContent =
+    dados.valor;
+
+
+    document.getElementById("extenso").textContent =
+    dados.extenso;
+
+
+
+
+    // ===============================
+    // REFERENTE
+    // ===============================
+
+    document.getElementById("referente").textContent =
+    dados.referente;
+
+
+
+
+    // ===============================
+    // CIDADE
+    // ===============================
+
+    document.getElementById("cidade").textContent =
+    dados.cidade;
+
+
+
+
+    // ===============================
+    // ASSINATURA
+    // ===============================
+
+    document.getElementById("nomeAssinatura").textContent =
+    dados.recebedor;
+
+
+
+    document.getElementById("documentoAssinatura").textContent =
+    document.getElementById("documento").textContent;
+
+
+
+
+    // ===============================
+    // DATA
+    // ===============================
 
     const partes = dados.data.split("-");
 
@@ -142,11 +172,14 @@ window.onload = () => {
 
 
     document.getElementById("data").textContent =
-    `${partes[2]} de ${meses[parseInt(partes[1])-1]} de ${partes[0]}`;
+    `${partes[2]} de ${meses[parseInt(partes[1]) - 1]} de ${partes[0]}`;
 
 
 
-    // Abre impressão automática
+
+    // ===============================
+    // ABRIR IMPRESSÃO AUTOMÁTICA
+    // ===============================
 
     setTimeout(() => {
 
@@ -156,7 +189,10 @@ window.onload = () => {
 
 
 
-    // Fecha após imprimir
+
+    // ===============================
+    // FECHAR APÓS IMPRESSÃO
+    // ===============================
 
     window.onafterprint = () => {
 
