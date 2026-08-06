@@ -43,7 +43,7 @@ if (documentoPagador.length === 11) {
 
     // Valor em números
     document.getElementById("valor").textContent = dados.valor;
-    document.getElementById("valorTexto").textContent = dados.valor;
+    document.getElementById("valorTexto").textContent = dados.extenso;
 
     // Valor por extenso
     document.getElementById("extenso").textContent = dados.extenso;
