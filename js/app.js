@@ -31,6 +31,8 @@ document.getElementById("formRecibo").addEventListener("submit", function(e){
 
         data: document.getElementById("data").value,
 
+        documento: document.getElementById("documento").value.trim(),
+
         pagador: document.getElementById("pagador").value.trim(),
 
         recebedor: document.getElementById("recebedor").value.trim(),
@@ -61,6 +63,14 @@ document.getElementById("formRecibo").addEventListener("submit", function(e){
 
     }
 
+    if(recibo.documento === ""){
+
+    alert("Informe o CPF ou CNPJ do recebedor.");
+
+    return;
+
+}
+    
     if(recibo.valor === ""){
 
         alert("Informe o valor.");
