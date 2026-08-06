@@ -36,7 +36,7 @@ window.onload = () => {
     // Assinatura
     document.getElementById("nomeAssinatura").textContent = dados.recebedor;
 
-    const documento = dados.documento.replace(/\D/g, "");
+    const documento = (dados.documento || "").replace(/\D/g, "");
 
 if (documento.length === 11) {
 
