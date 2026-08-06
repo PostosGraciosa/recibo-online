@@ -36,6 +36,25 @@ window.onload = () => {
     // Assinatura
     document.getElementById("nomeAssinatura").textContent = dados.recebedor;
 
+    const documento = dados.documento.replace(/\D/g, "");
+
+if (documento.length === 11) {
+
+    document.getElementById("documento").textContent =
+        "CPF: " + dados.documento;
+
+} else if (documento.length === 14) {
+
+    document.getElementById("documento").textContent =
+        "CNPJ: " + dados.documento;
+
+} else {
+
+    document.getElementById("documento").textContent =
+        dados.documento;
+
+}
+
     // Formatar data
     const partes = dados.data.split("-");
 
