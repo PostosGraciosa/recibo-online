@@ -113,3 +113,25 @@ document.getElementById("formRecibo").addEventListener("submit", function(e){
     window.open("recibo.html", "_blank");
 
 });
+
+// ======================================
+// CONVERTE VALOR PARA EXTENSO AUTOMÁTICO
+// ======================================
+
+document.getElementById("valor").addEventListener("input", function(){
+
+    let valor = this.value
+    .replace("R$", "")
+    .replace(/\./g,"")
+    .replace(",",".")
+    .trim();
+
+
+    if(valor !== "" && typeof valorPorExtenso === "function"){
+
+        document.getElementById("extenso").value =
+        valorPorExtenso(Number(valor));
+
+    }
+
+});
