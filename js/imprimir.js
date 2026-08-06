@@ -3,94 +3,57 @@
 // imprimir.js
 // ======================================
 
-
 document.addEventListener("DOMContentLoaded", () => {
 
+    const dados = JSON.parse(localStorage.getItem("recibo"));
 
-    const dados = JSON.parse(
-        localStorage.getItem("recibo")
-    );
-
-
-    if(!dados){
-
+    if (!dados) {
         alert("Nenhum recibo encontrado.");
-
+        window.close();
         return;
-
     }
 
+    // Nome do recebedor
+    document.getElementById("recebedor").textContent = dados.recebedor;
 
+    // Nome do pagador
+    document.getElementById("pagador").textContent = dados.pagador;
 
-    // Preenche os dados
+    // Valor em números
+    document.getElementById("valor").textContent = dados.valor;
+    document.getElementById("valorTexto").textContent = dados.valor;
 
+    // Valor por extenso
+    document.getElementById("extenso").textContent = dados.extenso;
 
-    document.getElementById("recebedor").textContent =
-        dados.recebedor;
+    // Referente
+    document.getElementById("referente").textContent = dados.referente;
 
+    // Cidade
+    document.getElementById("cidade").textContent = dados.cidade;
 
+    // Assinatura
+    document.getElementById("nomeAssinatura").textContent = dados.recebedor;
 
-    document.getElementById("pagador").textContent =
-        dados.pagador;
+    // Formatar data
+    const partes = dados.data.split("-");
 
-
-
-    document.getElementById("valor").textContent =
-        dados.valor;
-
-
-
-    document.getElementById("valorTexto").textContent =
-        dados.valor;
-
-
-
-    document.getElementById("extenso").textContent =
-        dados.extenso;
-
-
-
-    document.getElementById("referente").textContent =
-        dados.referente;
-
-
-
-    document.getElementById("cidade").textContent =
-        dados.cidade;
-
-
-
-    document.getElementById("nomeAssinatura").textContent =
-        dados.recebedor;
-
-
-
-    // Formata data
-
-
-    const data = new Date(dados.data);
-
-
-
-    const dia = String(
-        data.getDate()
-    ).padStart(2,"0");
-
-
-
-    const mes = String(
-        data.getMonth()+1
-    ).padStart(2,"0");
-
-
-
-    const ano = data.getFullYear();
-
-
+    const meses = [
+        "janeiro",
+        "fevereiro",
+        "março",
+        "abril",
+        "maio",
+        "junho",
+        "julho",
+        "agosto",
+        "setembro",
+        "outubro",
+        "novembro",
+        "dezembro"
+    ];
 
     document.getElementById("data").textContent =
-        `${dia}/${mes}/${ano}`;
-
-
+        `${partes[2]} de ${meses[parseInt(partes[1]) - 1]} de ${partes[0]}`;
 
 });
