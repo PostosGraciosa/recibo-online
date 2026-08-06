@@ -3,7 +3,7 @@
 // imprimir.js
 // ======================================
 
-document.addEventListener("DOMContentLoaded", () => {
+window.onload = () => {
 
     const dados = JSON.parse(localStorage.getItem("recibo"));
 
@@ -56,4 +56,14 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("data").textContent =
         `${partes[2]} de ${meses[parseInt(partes[1]) - 1]} de ${partes[0]}`;
 
-});
+    // Aguarda a renderização e abre a impressão
+    setTimeout(() => {
+        window.print();
+    }, 500);
+
+    // Fecha a janela após a impressão
+    window.onafterprint = () => {
+        window.close();
+    };
+
+};
