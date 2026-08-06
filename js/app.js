@@ -29,23 +29,25 @@ document.getElementById("formRecibo").addEventListener("submit", function(e){
 
     const recibo = {
 
-        data: document.getElementById("data").value,
+    data: document.getElementById("data").value,
 
-        documento: document.getElementById("documento").value.trim(),
+    pagador: document.getElementById("pagador").value.trim(),
 
-        pagador: document.getElementById("pagador").value.trim(),
+    documentoPagador: document.getElementById("documentoPagador").value.trim(),
 
-        recebedor: document.getElementById("recebedor").value.trim(),
+    recebedor: document.getElementById("recebedor").value.trim(),
 
-        valor: document.getElementById("valor").value.trim(),
+    documento: document.getElementById("documento").value.trim(),
 
-        extenso: document.getElementById("extenso").value.trim(),
+    valor: document.getElementById("valor").value.trim(),
 
-        referente: document.getElementById("referente").value.trim(),
+    extenso: document.getElementById("extenso").value.trim(),
 
-        cidade: document.getElementById("cidade").value.trim()
+    referente: document.getElementById("referente").value.trim(),
 
-    };
+    cidade: document.getElementById("cidade").value.trim()
+
+};
 
     // Validação
 
@@ -55,6 +57,13 @@ document.getElementById("formRecibo").addEventListener("submit", function(e){
         return;
 
     }
+
+    if(recibo.documentoPagador === ""){
+
+    alert("Informe o CPF ou CNPJ do pagador.");
+    return;
+
+}
 
     if(recibo.recebedor === ""){
 
