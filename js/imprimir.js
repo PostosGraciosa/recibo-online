@@ -24,33 +24,42 @@ window.onload = () => {
     // ===============================
 
     document.getElementById("recebedor").textContent =
-    dados.recebedor;
+    dados.recebedor || "";
 
 
-
-    // CPF ou CNPJ do recebedor no texto
 
     const documentoRecebedor =
     (dados.documento || "").replace(/\D/g, "");
 
 
+
+    let documentoRecebedorTexto = "";
+
+
     if(documentoRecebedor.length === 11){
 
-      document.getElementById("documentoRecebedor").textContent =
-"CNPJ: " + dados.documento;
+        documentoRecebedorTexto =
+        "CPF: " + dados.documento;
 
     }
     else if(documentoRecebedor.length === 14){
 
-        document.getElementById("documentoRecebedor").textContent =
-"CNPJ: " + dados.documento;
+        documentoRecebedorTexto =
+        "CNPJ: " + dados.documento;
+
     }
     else{
 
-        document.getElementById("documentoRecebedor").textContent =
+        documentoRecebedorTexto =
         dados.documento || "";
 
     }
+
+
+
+    document.getElementById("documentoRecebedor").textContent =
+    documentoRecebedorTexto;
+
 
 
 
@@ -59,34 +68,45 @@ window.onload = () => {
     // PAGADOR
     // ===============================
 
+
     document.getElementById("pagador").textContent =
-    dados.pagador;
+    dados.pagador || "";
 
 
 
     const documentoPagador =
-    (dados.documentoPagador || "").replace(/\D/g, "");
+    (dados.documentoPagador || "").replace(/\D/g,"");
+
+
+
+    let documentoPagadorTexto = "";
 
 
 
     if(documentoPagador.length === 11){
 
-        document.getElementById("documentoPagador").textContent =
+        documentoPagadorTexto =
         "CPF: " + dados.documentoPagador;
 
     }
     else if(documentoPagador.length === 14){
 
-        document.getElementById("documentoPagador").textContent =
+        documentoPagadorTexto =
         "CNPJ: " + dados.documentoPagador;
 
     }
     else{
 
-        document.getElementById("documentoPagador").textContent =
+        documentoPagadorTexto =
         dados.documentoPagador || "";
 
     }
+
+
+
+    document.getElementById("documentoPagador").textContent =
+    documentoPagadorTexto;
+
 
 
 
@@ -95,16 +115,20 @@ window.onload = () => {
     // VALORES
     // ===============================
 
+
     document.getElementById("valor").textContent =
-    dados.valor;
+    dados.valor || "";
+
 
 
     document.getElementById("valorTexto").textContent =
-    dados.valor;
+    dados.valor || "";
+
 
 
     document.getElementById("extenso").textContent =
-    dados.extenso;
+    dados.extenso || "";
+
 
 
 
@@ -113,8 +137,10 @@ window.onload = () => {
     // REFERENTE
     // ===============================
 
+
     document.getElementById("referente").textContent =
-    dados.referente;
+    dados.referente || "";
+
 
 
 
@@ -123,8 +149,10 @@ window.onload = () => {
     // CIDADE
     // ===============================
 
+
     document.getElementById("cidade").textContent =
-    dados.cidade;
+    dados.cidade || "";
+
 
 
 
@@ -133,13 +161,15 @@ window.onload = () => {
     // ASSINATURA
     // ===============================
 
+
     document.getElementById("nomeAssinatura").textContent =
-    dados.recebedor;
+    dados.recebedor || "";
 
 
 
     document.getElementById("documentoAssinatura").textContent =
-document.getElementById("documentoRecebedor").textContent;
+    documentoRecebedorTexto;
+
 
 
 
@@ -148,7 +178,9 @@ document.getElementById("documentoRecebedor").textContent;
     // DATA
     // ===============================
 
+
     const partes = dados.data.split("-");
+
 
 
     const meses = [
@@ -171,16 +203,18 @@ document.getElementById("documentoRecebedor").textContent;
 
 
     document.getElementById("data").textContent =
-    `${partes[2]} de ${meses[parseInt(partes[1]) - 1]} de ${partes[0]}`;
+    `${partes[2]} de ${meses[parseInt(partes[1])-1]} de ${partes[0]}`;
+
 
 
 
 
     // ===============================
-    // ABRIR IMPRESSÃO AUTOMÁTICA
+    // IMPRESSÃO AUTOMÁTICA
     // ===============================
 
-    setTimeout(() => {
+
+    setTimeout(()=>{
 
         window.print();
 
@@ -189,9 +223,11 @@ document.getElementById("documentoRecebedor").textContent;
 
 
 
+
     // ===============================
     // FECHAR APÓS IMPRESSÃO
     // ===============================
+
 
     window.onafterprint = () => {
 
