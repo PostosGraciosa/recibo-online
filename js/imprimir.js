@@ -139,7 +139,7 @@ window.onload = () => {
 
 
     document.getElementById("documentoAssinatura").textContent =
-    document.getElementById("documento").textContent;
+document.getElementById("documentoRecebedor").textContent;
 
 
 
