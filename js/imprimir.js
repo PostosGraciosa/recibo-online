@@ -5,6 +5,8 @@
 
 window.onload = () => {
 
+    alert("Página carregada!");
+
     const dados = JSON.parse(localStorage.getItem("recibo"));
 
     if (!dados) {
@@ -58,7 +60,8 @@ window.onload = () => {
 
     // Aguarda a renderização e abre a impressão
     setTimeout(() => {
-        window.print();
+        alert("Vou imprimir agora");
+window.print();
     }, 500);
 
     // Fecha a janela após a impressão
