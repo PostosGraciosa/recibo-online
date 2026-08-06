@@ -20,6 +20,27 @@ window.onload = () => {
     // Nome do pagador
     document.getElementById("pagador").textContent = dados.pagador;
 
+    // CPF ou CNPJ do pagador
+
+const documentoPagador = (dados.documentoPagador || "").replace(/\D/g, "");
+
+if (documentoPagador.length === 11) {
+
+    document.getElementById("documentoPagador").textContent =
+        "CPF: " + dados.documentoPagador;
+
+} else if (documentoPagador.length === 14) {
+
+    document.getElementById("documentoPagador").textContent =
+        "CNPJ: " + dados.documentoPagador;
+
+} else {
+
+    document.getElementById("documentoPagador").textContent =
+        dados.documentoPagador || "";
+
+}
+
     // Valor em números
     document.getElementById("valor").textContent = dados.valor;
     document.getElementById("valorTexto").textContent = dados.valor;
@@ -48,10 +69,10 @@ if (documento.length === 11) {
     document.getElementById("documento").textContent =
         "CNPJ: " + dados.documento;
 
-} else {
+else {
 
     document.getElementById("documento").textContent =
-        dados.documento;
+        dados.documento || "";
 
 }
 
