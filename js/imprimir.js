@@ -36,19 +36,18 @@ window.onload = () => {
 
     if(documentoRecebedor.length === 11){
 
-        document.getElementById("documento").textContent =
-        "CPF: " + dados.documento;
+      document.getElementById("documentoRecebedor").textContent =
+"CNPJ: " + dados.documento;
 
     }
     else if(documentoRecebedor.length === 14){
 
-        document.getElementById("documento").textContent =
-        "CNPJ: " + dados.documento;
-
+        document.getElementById("documentoRecebedor").textContent =
+"CNPJ: " + dados.documento;
     }
     else{
 
-        document.getElementById("documento").textContent =
+        document.getElementById("documentoRecebedor").textContent =
         dados.documento || "";
 
     }
